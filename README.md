@@ -1,7 +1,7 @@
 # serial_audio_decoder
 Serial audio data (I2S or Left justified) decoder.Using valid-ready handshake.
 
-![serial_audio_decoder](https://user-images.githubusercontent.com/14823909/106296058-87ebee00-6294-11eb-9bff-575ee072715b.png)
+![serial_audio_decoder](https://user-images.githubusercontent.com/14823909/106344647-61f33780-62ee-11eb-9559-37f03dec33aa.png)
 
 |Name|Direction|Description|
 |--|--|--|
