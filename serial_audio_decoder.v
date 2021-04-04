@@ -41,7 +41,7 @@ module serial_audio_decoder(
             audio_shift_flag <= 3'b000;
             audio_shift_data <= 0;
             o_audio <= 0;
-            is_error <= 1'b1;
+            is_error <= 1'b0;
         end else begin
             audio_shift_data <= { audio_shift_data[30:0], sdin };
             channel_history <= { channel_history[0], is_current_channel_left };
