@@ -68,7 +68,7 @@ module serial_audio_decoder_tb();
         reset = 0;
         repeat(2) @(posedge clk128);
         
-        outChannel(16'h0000, 16, 2);		// Left
+        outChannel(16'h4567, 16, 2);		// Left
         outChannel(16'h1fed, 16 ,2);		// Right
         outChannel(16'h2eef, 16 ,2);		// Left
         outChannel(16'h3333, 16 ,2);		// Right
