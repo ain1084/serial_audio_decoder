@@ -88,6 +88,10 @@ module serial_audio_decoder_tb();
         outChannel(32'hAAAAAAAA, 32 ,1);	// Left
         outChannel(32'h99999999, 32 ,1);	// Right
 
+        outChannel(16'h9876, 16 ,1);	    // Left
+        outChannel(16'h1111, 15 ,1);	    // Ignore (unsupported bit length)
+        outChannel(16'h2345, 16 ,1);	    // Left
+
 
         for (i = 0; i < 64; i++) begin
             sclk = 0;
@@ -98,4 +102,21 @@ module serial_audio_decoder_tb();
 
         $finish();
     end
+
+    reg is_error_occurred;
+    always @(posedge sclk or posedge reset) begin
+        if (reset) begin
+            is_error_occurred <= 1'b0;
+        end else if (o_valid) begin
+            $write("out: is_left(%d) audio = %08h\n", o_is_left, o_audio);
+        end else if (is_error) begin
+            if (!is_error_occurred) begin
+                $write("error\n");
+                is_error_occurred <= 1'b1;
+            end
+        end else begin
+            is_error_occurred <= 1'b0;
+        end
+    end
+
 endmodule
