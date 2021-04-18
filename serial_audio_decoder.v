@@ -28,6 +28,7 @@ module serial_audio_decoder(
             shift_data <= 0;
             o_audio <= 0;
             is_error <= 1'b0;
+            o_valid <= 1'b0;
         end else begin
             shift_data <= { shift_data[30:0], sdin };
             lr_history <= { lr_history[0], is_current_channel_left };
