@@ -63,10 +63,11 @@ module serial_audio_decoder_tb();
         $dumpvars;
 
         reset = 0;
-        lrclk = 0;
+        lrclk = 1;
         repeat(2) @(posedge clk128) reset = 1;
         reset = 0;
-        repeat(2) @(posedge clk128);
+        lrclk = 0;
+        repeat(16) @(posedge clk128);
         
         outChannel(16'h4567, 16, 2);		// Left
         outChannel(16'h1fed, 16 ,2);		// Right
