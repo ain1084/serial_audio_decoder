@@ -1,7 +1,7 @@
 # serial_audio_decoder
 Serial audio data (I2S or Left justified) decoder.Using valid-ready handshake.
 
-![serial_audio_decoder](https://user-images.githubusercontent.com/14823909/106344647-61f33780-62ee-11eb-9559-37f03dec33aa.png)
+![serial_audio_decoder](https://user-images.githubusercontent.com/14823909/149629735-6448fd02-b8f3-4e11-9554-f87370669edf.png)
 
 |Name|Direction|Description|
 |--|--|--|
@@ -15,4 +15,4 @@ Serial audio data (I2S or Left justified) decoder.Using valid-ready handshake.
 |o_valid|output|Output data valid signal (1: valid)|
 |o_ready|input|Incoming ready signal (1: ready)|
 |o_is_left|output|Channel (0: Right / 1: Left)
-|o_data[31:0]|output|Audio data (Left justified) |
+|o_data[audio_width-1:0]|output|Audio data (Left justified) |
